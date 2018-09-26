@@ -7,8 +7,10 @@ import codecs
 sys.stdout = codecs.getwriter('utf8')(sys.stdout)
 sys.stderr = codecs.getwriter('utf8')(sys.stderr)
 
-foursquare_client_id = "PASTE_YOUR_ID_HERE"
-foursquare_client_secret = "YOUR_SECRET_HERE"
+foursquare_client_id = json.loads(open('client_secrets.json', 'r').
+                                  read())['foursquare']['client_id']
+foursquare_client_secret = json.loads(open('client_secrets.json', 'r').
+                                      read())['foursquare']['client_secret']
 
 
 def findARestaurant(mealType,location):
@@ -22,16 +24,17 @@ def findARestaurant(mealType,location):
 	#5. Grab the first image
 	#6. If no image is available, insert default a image url
 	#7. Return a dictionary containing the restaurant name, address, and image url
+
     return
 
 
 if __name__ == '__main__':
-	findARestaurant("Pizza", "Tokyo, Japan")
-	findARestaurant("Tacos", "Jakarta, Indonesia")
-	findARestaurant("Tapas", "Maputo, Mozambique")
-	findARestaurant("Falafel", "Cairo, Egypt")
-	findARestaurant("Spaghetti", "New Delhi, India")
-	findARestaurant("Cappuccino", "Geneva, Switzerland")
-	findARestaurant("Sushi", "Los Angeles, California")
-	findARestaurant("Steak", "La Paz, Bolivia")
+    findARestaurant("Pizza", "Tokyo, Japan")
+    findARestaurant("Tacos", "Jakarta, Indonesia")
+    findARestaurant("Tapas", "Maputo, Mozambique")
+    findARestaurant("Falafel", "Cairo, Egypt")
+    findARestaurant("Spaghetti", "New Delhi, India")
+    findARestaurant("Cappuccino", "Geneva, Switzerland")
+    findARestaurant("Sushi", "Los Angeles, California")
+    findARestaurant("Steak", "La Paz, Bolivia")
     findARestaurant("Gyros", "Sydney Australia")
