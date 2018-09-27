@@ -37,13 +37,23 @@ def findARestaurant(mealType,location):
     # Process the response
     result = json.loads(content)
 
-	#3. Grab the first restaurant
-	#4. Get a  300x300 picture of the restaurant using the venue_id (you can change this by altering the 300x300 value in the URL or replacing it with 'orginal' to get the original picture
+	# Grab the first restaurant
+    restaurant_name = result['response']['venues'][0]['name']
+    restaurant_address = (' ').join(result['response']['venues'][0]
+                                    ['location']['formattedAddress'])
+
+    print("\nRestaurant Name: " + restaurant_name)
+    print("Restaurant Address: " + restaurant_address)
+
+	#4. Get a  300x300 picture of the restaurant using the venue_id (you can
+	#change this by altering the 300x300 value in the URL or replacing it with
+	#'orginal' to get the original picture
 	#5. Grab the first image
 	#6. If no image is available, insert default a image url
-	#7. Return a dictionary containing the restaurant name, address, and image url
+	#7. Return a dictionary containing the restaurant name, address, and image
+	#url
 
-    return result
+    return
 
 
 if __name__ == '__main__':
