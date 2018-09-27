@@ -37,6 +37,10 @@ def findARestaurant(mealType,location):
     # Process the response
     result = json.loads(content)
 
+    # Check if no venue found
+    if not result['response']['venues']:
+        return 'No restaurants found'
+
 	# Grab the first restaurant
     restaurant_name = result['response']['venues'][0]['name']
     restaurant_address = (' ').join(result['response']['venues'][0]
@@ -66,7 +70,11 @@ def findARestaurant(mealType,location):
                  '300x300' +
                  result['response']['photos']['items'][0]['suffix'])
     print('Image: ' + image)
-    return
+
+    # Return a dictionary of name, address and image
+    return {'name':restaurant_name,
+            'address':restaurant_address,
+            'image':image}
 
 
 if __name__ == '__main__':
