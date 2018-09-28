@@ -20,10 +20,14 @@ Foursquare's Search and Venue Photos API.
 ID and client secret fields filled in 
 
 #### How to get a Google API key
-_To follow_
+Refer to the guide in https://developers.google.com/maps/documentation/javascript/get-api-key
+to get an API key. You may need to indicate some billing information
+before you can proceed with acquiring an API key to be used for Google Maps API requests.
 
 #### How to get a Foursquare API client ID and secret
-_To follow_
+Refer to the guide in https://developer.foursquare.com/docs/api to create 
+a developer account, an app and retrieve the client ID and client secret for
+Foursquare API requests.
 
 ## Usage
 
@@ -44,5 +48,12 @@ following sets of parameters:
 8. Steak in La Paz, Bolivia
 9. Gyros in Sydney Australia
 
-## Limitations
-**_Coding ongoing_**
+Alternatively, the function can be used by importing the function `findARestaurant`.
+Pass a meal type and location as arguments.
+
+Example:
+
+```python
+from findARestaurant import findARestaurant
+findARestaurant('Pizza','Antartica')
+```
