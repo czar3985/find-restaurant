@@ -6,17 +6,18 @@ a query string.
 It makes API requests to Google Maps' Geolocation API and 
 Foursquare's Search and Venue Photos API.
 
+It also provides an API endpoint for other applications to use.
+
 ## Prerequisites
 
 1. python
 2. python libraries: json, httplib2, sys, codecs
-3. `geocode.py`
-4. `findARestaurant.py`
-5. Google developer account
-6. Google API key
+3. Python scripts from this repository
+4. Google developer account
+5. Google API key
 6. Foursquare developer account
-8. Foursquare API client ID and client secret
-9. `client_secrets.json` with the Google API key, Foursquare client
+7. Foursquare API client ID and client secret
+8. `client_secrets.json` with the Google API key, Foursquare client
 ID and client secret fields filled in 
 
 #### How to get a Google API key
@@ -31,6 +32,7 @@ Foursquare API requests.
 
 ## Usage
 
+#### 1. Running findARestaurant.py
 The following resource gives more information on how to run python scripts: 
 [How to Run a Python Script via a File or the Shell](https://www.pythoncentral.io/execute-python-script-file-shell/).
 
@@ -48,6 +50,7 @@ following sets of parameters:
 8. Steak in La Paz, Bolivia
 9. Gyros in Sydney Australia
 
+#### 2. Importing findARestaurant function
 Alternatively, the function can be used by importing the function `findARestaurant`.
 Pass a meal type and location as arguments.
 
@@ -57,3 +60,19 @@ Example:
 from findARestaurant import findARestaurant
 findARestaurant('Pizza','Antartica')
 ```
+
+#### 3. Accessing the app's API endpoint
+
+An API endpoint is provided and can be accessed with a GET request.
+The result is provided in JSON format.
+
+> Method: GET
+> 
+>URL: http://localhost:5000/restaurant
+> 
+>Parameters:
+>- location: City or Address
+>- mealtype: Food item
+>
+>Example: http://localhost:5000/restaurant?location=Los+Angeles+California&mealtype=pasta
+>
