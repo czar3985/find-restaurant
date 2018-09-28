@@ -4,8 +4,12 @@ import httplib2
 import sys
 import codecs
 
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 sys.stdout = codecs.getwriter('utf8')(sys.stdout)
 sys.stderr = codecs.getwriter('utf8')(sys.stderr)
+
 
 foursquare_client_id = json.loads(open('client_secrets.json', 'r').
                                   read())['foursquare']['client_id']
